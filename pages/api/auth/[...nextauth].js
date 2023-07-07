@@ -6,7 +6,7 @@ import GoogleProvider from 'next-auth/providers/google'
 const adminEmails = ['adilovdarin1@gmail.com']
 
 export const authOptions = {
-	secret: process.env.SECRET,
+	secret: process.env.NEXTAUTH_SECRET,
 	providers: [
 		GoogleProvider({
 			clientId: process.env.GOOGLE_ID,
@@ -24,7 +24,6 @@ export const authOptions = {
 		},
 	},
 }
-
 export default NextAuth(authOptions)
 
 export async function isAdminRequest(req, res) {
