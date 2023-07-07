@@ -24,7 +24,7 @@ export default function Layout({ children }) {
 	return (
 		<div className='bg-bgGray min-h-screen '>
 			<div className='block md:hidden flex items-center p-4'>
-				<button onClick={() => setShowNav(true)}>
+				<button onClick={() => setShowNav(!showNav)}>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						viewBox='0 0 24 24'
@@ -43,7 +43,7 @@ export default function Layout({ children }) {
 				</div>
 			</div>
 			<div className='flex'>
-				<Nav show={showNav} />
+				<Nav setShowNav={setShowNav} show={showNav} />
 				<div className='flex-grow p-4'>{children}</div>
 			</div>
 		</div>

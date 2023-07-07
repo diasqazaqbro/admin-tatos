@@ -9,15 +9,17 @@ export default function OrdersPage() {
 			setOrders(response.data)
 		})
 	}, [])
+	console.log(orders)
+
 	return (
 		<Layout>
-			<h1>Orders</h1>
-			<table className='basic'>
+			<table className='basic table'>
 				<thead>
 					<tr>
 						<th>Дата</th>
-						<th>Оплаченный</th>
 						<th>Получатель</th>
+						<th>Связаться</th>
+						<th>Комментарий</th>
 						<th>Товар</th>
 					</tr>
 				</thead>
@@ -26,20 +28,17 @@ export default function OrdersPage() {
 						orders.map(order => (
 							<tr key={order._id}>
 								<td>{new Date(order.createdAt).toLocaleString()}</td>
-								<td className={order.paid ? 'text-green-600' : 'text-red-600'}>
-									{order.paid ? 'YES' : 'NO'}
-								</td>
+
+								<td>{order.name}</td>
 								<td>
-									{order.name} {order.email}
-									<br />
-									{order.city} {order.postalCode} {order.country}
-									<br />
-									{order.streetAddress}
+									{order.option} {order.number}
 								</td>
+								<td>{order.commentary}</td>
 								<td>
 									{order.line_items.map(l => (
 										<>
-											{l.price_data?.product_data.name} x{l.quantity}
+											{l.price_data?.product_data.name} x{l.quantity} -{' '}
+											{l.price_data?.unit_amount} тг
 											<br />
 										</>
 									))}

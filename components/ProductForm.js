@@ -18,7 +18,7 @@ export default function ProductForm({
 		assignedProperties || {}
 	)
 	const [price, setPrice] = useState(existingPrice || '')
-	const [images, setImages] = useState('')
+	const [images, setImages] = useState(existingImages || '')
 	const [goToProducts, setGoToProducts] = useState(false)
 	const [isUploading, setIsUploading] = useState(false)
 	const [categories, setCategories] = useState([])

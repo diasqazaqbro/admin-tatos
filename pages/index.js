@@ -5,15 +5,9 @@ export default function Home() {
 	const { data: session } = useSession()
 	return (
 		<Layout>
-			<div className='text-blue-900 flex justify-between'>
-				<h2>
-					Привет, <b>{session?.user?.name}</b>
-				</h2>
-				<div className='flex bg-gray-300 gap-1 text-black rounded-lg overflow-hidden'>
-					<img src={session?.user?.image} alt='' className='w-6 h-6' />
-					<span className='px-2'>{session?.user?.name}</span>
-				</div>
-			</div>
+			<h3 className='font-medium text-2xl py-3'>
+				Доброе утро, <b>{session?.user?.name}</b>
+			</h3>
 		</Layout>
 	)
 }

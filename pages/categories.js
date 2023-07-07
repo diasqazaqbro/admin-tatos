@@ -100,8 +100,8 @@ function Categories({ swal }) {
 			<h1>Категории</h1>
 			<label>
 				{editedCategory
-					? `Edit category ${editedCategory.name}`
-					: 'Create new category'}
+					? `Редактировать ${editedCategory.name}`
+					: 'Создать новую категорию'}
 			</label>
 			<form onSubmit={saveCategory}>
 				<div className='flex gap-1'>
@@ -115,7 +115,7 @@ function Categories({ swal }) {
 						onChange={ev => setParentCategory(ev.target.value)}
 						value={parentCategory}
 					>
-						<option value=''>Нет родительской категории</option>
+						<option value=''>Нет родительской категории (пока не юзать)</option>
 						{categories.length > 0 &&
 							categories.map(category => (
 								<option key={category._id} value={category._id}>
@@ -138,12 +138,12 @@ function Categories({ swal }) {
 							<div key={property.name} className='flex gap-1 mb-2'>
 								<input
 									type='text'
-									value={property.name}
+									value={'Производитель'}
 									className='mb-0'
 									onChange={ev =>
 										handlePropertyNameChange(index, property, ev.target.value)
 									}
-									placeholder='имя свойства (пример: цвет)'
+									placeholder='использовать только "Производитель"'
 								/>
 								<input
 									type='text'
@@ -152,7 +152,7 @@ function Categories({ swal }) {
 										handlePropertyValuesChange(index, property, ev.target.value)
 									}
 									value={property.values}
-									placeholder='значения, разделенные запятой'
+									placeholder='значения, разделенные запятой (между запитой не должно быть пробелов)'
 								/>
 								<button
 									onClick={() => removeProperty(index)}
@@ -189,7 +189,7 @@ function Categories({ swal }) {
 					<thead>
 						<tr>
 							<td>Имя Категории</td>
-							<td>Родительская Категория</td>
+							<td>Родительская Категория(пока не юзать)</td>
 							<td></td>
 						</tr>
 					</thead>
