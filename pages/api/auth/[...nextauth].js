@@ -3,7 +3,7 @@ import { MongoDBAdapter } from '@next-auth/mongodb-adapter'
 import NextAuth, { getServerSession } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 
-const adminEmails = [process.env.NEXTAUTH_SECRET]
+const adminEmails = [process.env.EMAIL]
 
 export const authOptions = {
 	secret: process.env.NEXTAUTH_SECRET,
