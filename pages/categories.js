@@ -138,12 +138,12 @@ function Categories({ swal }) {
 							<div key={property.name} className='flex gap-1 mb-2'>
 								<input
 									type='text'
-									value={'Производитель'}
+									value={property.name}
 									className='mb-0'
 									onChange={ev =>
 										handlePropertyNameChange(index, property, ev.target.value)
 									}
-									placeholder='использовать только "Производитель"'
+									placeholder='использовать только "Производитель", "Цвет","Размер"'
 								/>
 								<input
 									type='text'
