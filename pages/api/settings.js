@@ -12,8 +12,8 @@ export default async function handle(req, res) {
 	}
 
 	if (method === 'PUT') {
-		const { number, title, supTitle } = req.body
-		await Settings.updateOne({ number, title, supTitle })
+		const { number, title, supTitle, photo } = req.body
+		await Settings.updateOne({ number, title, supTitle, photo })
 		res.json(true)
 	}
 }

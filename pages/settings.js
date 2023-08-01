@@ -7,10 +7,12 @@ export default function ProductForm({
 	number: existingNumber,
 	title: existingTitle,
 	supTitle: existingSupTitle,
+	photo: existingPhoto,
 }) {
 	const [number, setNumber] = useState(existingNumber || '')
 	const [title, setTitle] = useState(existingTitle || '')
 	const [supTitle, setSupTitle] = useState(existingSupTitle || '')
+	const [photo, setPhoto] = useState(existingPhoto || '')
 	const [setting, setSetting] = useState([0])
 
 	const router = useRouter()
@@ -26,6 +28,7 @@ export default function ProductForm({
 			number,
 			title,
 			supTitle,
+			photo,
 		}
 		await axios.put('/api/settings', data)
 	}
@@ -54,6 +57,12 @@ export default function ProductForm({
 					placeholder='Реклама над хедером'
 					value={supTitle || setting[0].supTitle}
 					onChange={ev => setSupTitle(ev.target.value)}
+				/>
+				<input
+					type='text'
+					placeholder='Фото в главной странице'
+					value={photo || setting[0].photo}
+					onChange={ev => setPhoto(ev.target.value)}
 				/>
 				<button type='submit' className='btn-primary'>
 					Сохранить
