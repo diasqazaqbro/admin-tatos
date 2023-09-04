@@ -8,6 +8,7 @@ const adminEmails = [
 	'adilovdarin1@gmail.com',
 	'nazarovabbas2@gmail.com',
 	'amirovjanserik06@gmail.com',
+	'isenbekb7@gmail.com'
 ]
 
 export const authOptions = {
