@@ -7,7 +7,8 @@ const adminEmails = [
 	process.env.EMAIL,
 	'adilovdarin1@gmail.com',
 	'nazarovabbas2@gmail.com',
-	'diasqazaqbro@mail.ru'
+	'diasqazaqbro@mail.ru',
+	'nic1130.me@gmail.com'
 ]
 
 export const authOptions = {
