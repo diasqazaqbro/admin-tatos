@@ -8,7 +8,8 @@ const adminEmails = [
 	'adilovdarin1@gmail.com',
 	'nazarovabbas2@gmail.com',
 	'diasqazaqbro@mail.ru',
-	'nic1130.me@gmail.com'
+	'nic1130.me@gmail.com',
+	'krutoyBaha@bk.ru'
 ]
 
 export const authOptions = {
